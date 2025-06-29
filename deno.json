@@ -13,5 +13,13 @@
     "@deno/dnt": "jsr:@deno/dnt@^0.42.1",
     "@std/fs": "jsr:@std/fs@^1.0.18",
     "openapi-fetch": "npm:openapi-fetch@^0.14.0"
+  },
+  "publish": {
+    "exclude": [
+      ".github",
+      "scripts",
+      "test",
+      "npm"
+    ]
   }
 }
