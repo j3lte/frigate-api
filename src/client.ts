@@ -1,4 +1,4 @@
-import createClient, { Middleware } from "openapi-fetch";
+import createClient, { type Middleware } from "openapi-fetch";
 import type { paths } from "./frigate-api.d.ts";
 
 const myMiddleware: Middleware = {
@@ -26,5 +26,3 @@ export const createRawFrigateClient = (baseURL: string) => {
   client.use(myMiddleware);
   return client;
 };
-
-export { paths };

@@ -1,6 +1,6 @@
 import { createRawFrigateClient } from "./client.ts";
 import type { paths } from "./frigate-api.d.ts";
-import { LogsService, LogsServiceReturn } from "./types.ts";
+import type { LogsService, LogsServiceReturn } from "./types.ts";
 
 class FrigateClient {
   private _client: ReturnType<typeof createRawFrigateClient>;
@@ -13,7 +13,7 @@ class FrigateClient {
    * Get the raw client
    * @returns The raw client
    */
-  get client() {
+  get client(): typeof this._client {
     return this._client;
   }
 
@@ -23,7 +23,7 @@ class FrigateClient {
    * @param options - The options to pass to the request
    * @returns The response
    */
-  get get() {
+  get get(): typeof this._client.GET {
     return this._client.GET;
   }
 
@@ -33,7 +33,7 @@ class FrigateClient {
    * @param options - The options to pass to the request
    * @returns The response
    */
-  get post() {
+  get post(): typeof this._client.POST {
     return this._client.POST;
   }
 
@@ -43,7 +43,7 @@ class FrigateClient {
    * @param options - The options to pass to the request
    * @returns The response
    */
-  get delete() {
+  get delete(): typeof this._client.DELETE {
     return this._client.DELETE;
   }
 
@@ -53,7 +53,7 @@ class FrigateClient {
    * @param options - The options to pass to the request
    * @returns The response
    */
-  get put() {
+  get put(): typeof this._client.PUT {
     return this._client.PUT;
   }
 
@@ -61,7 +61,7 @@ class FrigateClient {
    * Check if the Frigate instance is healthy
    * @returns True if the Frigate instance is healthy, false otherwise
    */
-  async isHealthy() {
+  async isHealthy(): Promise<boolean> {
     const response = await this.get("/", { parseAs: "text" });
     return response.data === "Frigate is running. Alive and healthy!";
   }
@@ -70,16 +70,16 @@ class FrigateClient {
    * Get the version of the Frigate instance
    * @returns The version of the Frigate instance
    */
-  async version() {
+  async version(): Promise<string> {
     const response = await this.get("/version", { parseAs: "text" });
-    return response.data;
+    return response.data as string;
   }
 
   /**
    * Get the config of the Frigate instance
    * @returns The config of the Frigate instance
    */
-  async config() {
+  async config(): Promise<unknown> {
     const response = await this.get("/config");
     return response.data;
   }
@@ -88,16 +88,16 @@ class FrigateClient {
    * Get the raw config (yaml) of the Frigate instance
    * @returns The raw config of the Frigate instance
    */
-  async configRaw() {
+  async configRaw(): Promise<string> {
     const response = await this.get("/config/raw", { parseAs: "text" });
-    return response.data;
+    return response.data as string;
   }
 
   /**
    * Get the config schema of the Frigate instance
    * @returns The config schema of the Frigate instance
    */
-  async configSchema() {
+  async configSchema(): Promise<unknown> {
     const response = await this.get("/config/schema.json");
     return response.data;
   }
@@ -106,7 +106,7 @@ class FrigateClient {
    * Get the stats of the Frigate instance
    * @returns The stats of the Frigate instance
    */
-  async stats() {
+  async stats(): Promise<unknown> {
     const response = await this.get("/stats");
     return response.data;
   }
@@ -115,7 +115,7 @@ class FrigateClient {
    * Get the stats history of the Frigate instance
    * @returns The stats history of the Frigate instance
    */
-  async statsHistory(query: { keys?: string } = {}) {
+  async statsHistory(query: { keys?: string } = {}): Promise<unknown> {
     const response = await this.get("/stats/history", { query });
     return response.data;
   }
@@ -126,7 +126,7 @@ class FrigateClient {
    */
   async timeline(
     query: { camera?: string; limit?: number; source_id?: string } = {},
-  ) {
+  ): Promise<unknown> {
     const response = await this.get("/timeline", { query });
     return response.data;
   }
@@ -136,7 +136,7 @@ class FrigateClient {
    * @param service - The service to get the logs for
    * @returns The logs of the Frigate instance
    */
-  async logs(service: LogsService = "frigate") {
+  async logs(service: LogsService = "frigate"): Promise<LogsServiceReturn> {
     // @ts-ignore It doesn't seem to understand the log paths
     const response = await this.get(`/logs/${service}`);
     return response.data as unknown as LogsServiceReturn;
