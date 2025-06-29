@@ -2,6 +2,20 @@ import { createRawFrigateClient } from "./client.ts";
 import type { paths } from "./frigate-api.d.ts";
 import type { LogsService, LogsServiceReturn } from "./types.ts";
 
+/**
+ * A Frigate client
+ *
+ * This client is a wrapper around the Frigate API.
+ *
+ * @see https://jsr.io/@j3lte/frigate-api/doc
+ *
+ * @example
+ * ```typescript
+ * const frigate = new FrigateClient("http://localhost:8000");
+ * const version = await frigate.version();
+ * console.log(version);
+ * ```
+ */
 class FrigateClient {
   private _client: ReturnType<typeof createRawFrigateClient>;
 
