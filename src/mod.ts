@@ -11,7 +11,7 @@ import type { LogsService, LogsServiceReturn } from "./types.ts";
  *
  * @example
  * ```typescript
- * const frigate = new FrigateClient("http://localhost:8000");
+ * const frigate = new FrigateClient("http://localhost:8000/api");
  * const version = await frigate.version();
  * console.log(version);
  * ```
@@ -24,10 +24,13 @@ class FrigateClient {
 
   /**
    * Create a new Frigate client
-   * @param baseURL - The base URL of the Frigate instance
+   *
+   * _Note: The apiURL should be the complete url to the API, not just the base URL_
+   *
+   * @param apiURL - The API URL of the Frigate instance
    */
-  constructor(baseURL: string) {
-    this._client = createRawFrigateClient(baseURL);
+  constructor(apiURL: string) {
+    this._client = createRawFrigateClient(apiURL);
   }
 
   /**

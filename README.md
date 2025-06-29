@@ -35,7 +35,7 @@ Documentation is available at [JSR.io](https://jsr.io/@j3lte/frigate-api).
 ```typescript
 import { FrigateClient } from "@j3lte/frigate-api";
 
-const frigate = new FrigateClient("http://localhost:8000/api/");
+const frigate = new FrigateClient("http://localhost:8000/api");
 
 // You can use `get`, `post`, `put`, `delete` to make raw requests
 // Note: Some endpoints do not return JSON, so you need to specify the parseAs option (text, blob, stream)
