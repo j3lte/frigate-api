@@ -1,5 +1,14 @@
 # Frigate Data API
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/releases/latest "GitHub release (latest by date)")
+[![NPM Version](https://img.shields.io/npm/v/@j3lte/frigate-api?style=for-the-badge)](https://www.npmjs.com/package/frigate-api "NPM Version")
+[![GitHub Release Date](https://img.shields.io/github/release-date/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/releases/latest "GitHub Release Date")
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/j3lte/frigate-api?style=for-the-badge)
+[![GitHub](https://img.shields.io/github/license/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/blob/main/LICENSE "GitHub License")
+[![GitHub last commit](https://img.shields.io/github/last-commit/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/commits/main "GitHub last commit")
+[![GitHub issues](https://img.shields.io/github/issues/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/issues "Github Issues")
+[![JSR docs](https://img.shields.io/badge/JSR-Docs-blue?style=for-the-badge)](https://jsr.io/@j3lte/frigate-api/doc "Deno docs")
+
 This is a Deno/Node.js library for the
 [Frigate Data API](https://docs.frigate.video/).
 
@@ -16,6 +25,10 @@ deno add jsr:@j3lte/frigate-api
 ```bash
 npm install @j3lte/frigate-api
 ```
+
+## Docs
+
+Documentation is available at [JSR.io](https://jsr.io/@j3lte/frigate-api).
 
 ## Usage
 
