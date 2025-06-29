@@ -1,0 +1,16 @@
+{
+  "name": "@j3lte/frigate-api",
+  "license": "MIT",
+  "exports": "./mod.ts",
+  "tasks": {
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "npm": "deno run -A ./scripts/build-npm.ts",
+    "update": "./scripts/get-api.sh && deno run -A ./scripts/update-api.ts && deno fmt"
+  },
+  "imports": {
+    "@deno/dnt": "jsr:@deno/dnt@^0.42.1",
+    "@std/fs": "jsr:@std/fs@^1.0.18",
+    "openapi-fetch": "npm:openapi-fetch@^0.14.0"
+  }
+}
