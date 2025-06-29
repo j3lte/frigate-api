@@ -17,8 +17,15 @@ import type { LogsService, LogsServiceReturn } from "./types.ts";
  * ```
  */
 class FrigateClient {
+  /**
+   * The raw client
+   */
   private _client: ReturnType<typeof createRawFrigateClient>;
 
+  /**
+   * Create a new Frigate client
+   * @param baseURL - The base URL of the Frigate instance
+   */
   constructor(baseURL: string) {
     this._client = createRawFrigateClient(baseURL);
   }
@@ -69,6 +76,46 @@ class FrigateClient {
    */
   get put(): typeof this._client.PUT {
     return this._client.PUT;
+  }
+
+  /**
+   * Do a OPTIONS request
+   * @param path - The path to request
+   * @param options - The options to pass to the request
+   * @returns The response
+   */
+  get options(): typeof this._client.OPTIONS {
+    return this._client.OPTIONS;
+  }
+
+  /**
+   * Do a HEAD request
+   * @param path - The path to request
+   * @param options - The options to pass to the request
+   * @returns The response
+   */
+  get head(): typeof this._client.HEAD {
+    return this._client.HEAD;
+  }
+
+  /**
+   * Do a PATCH request
+   * @param path - The path to request
+   * @param options - The options to pass to the request
+   * @returns The response
+   */
+  get patch(): typeof this._client.PATCH {
+    return this._client.PATCH;
+  }
+
+  /**
+   * Do a TRACE request
+   * @param path - The path to request
+   * @param options - The options to pass to the request
+   * @returns The response
+   */
+  get trace(): typeof this._client.TRACE {
+    return this._client.TRACE;
   }
 
   /**

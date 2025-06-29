@@ -10,7 +10,7 @@
 [![JSR docs](https://img.shields.io/badge/JSR-Docs-blue?style=for-the-badge)](https://jsr.io/@j3lte/frigate-api/doc "Deno docs")
 
 This is a Deno/Node.js library for the
-[Frigate Data API](https://docs.frigate.video/).
+[Frigate Data API](https://docs.frigate.video/integrations/api/frigate-http-api).
 
 ## Installation
 
