@@ -1,7 +1,7 @@
 # Frigate Data API
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/releases/latest "GitHub release (latest by date)")
-[![NPM Version](https://img.shields.io/npm/v/@j3lte/frigate-api?style=for-the-badge)](https://www.npmjs.com/package/frigate-api "NPM Version")
+[![NPM Version](https://img.shields.io/npm/v/@j3lte/frigate-api?style=for-the-badge)](https://www.npmjs.com/package/@j3lte/frigate-api "NPM Version")
 [![GitHub Release Date](https://img.shields.io/github/release-date/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/releases/latest "GitHub Release Date")
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/j3lte/frigate-api?style=for-the-badge)
 [![GitHub](https://img.shields.io/github/license/j3lte/frigate-api?style=for-the-badge)](https://github.com/j3lte/frigate-api/blob/main/LICENSE "GitHub License")
